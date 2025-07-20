@@ -1,0 +1,21 @@
+{
+  "family": "jenkins-ecs-app",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::884394270671:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "jenkins-ecs-app",
+      "image": "884394270671.dkr.ecr.ap-south-1.amazonaws.com",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "hostPort": 3000
+        }
+      ]
+    }
+  ]
+}
